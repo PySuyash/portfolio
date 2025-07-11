@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    animation: qualities 0.8s ease forwards;
+    padding-top: 20px;
+}
+
+@keyframes qualities {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.navbar {
+    height: auto;
+    min-height: 70px;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.navbar h1 {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px 5px white;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: default
+}
+
+.menuQualities {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px;
+    animation: menuTrans 0.3s ease;
+}
+
+@keyframes menuTrans {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.menuQualities li, a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.menuQualities li a:hover {
+    background-color: white;
+    color: green;
+}
+
+.toggle {
+    height: 20px;
+    width: 30px;
+    padding: 2px;
+    margin: 10px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle span {
+    height: 3px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.toggle.active span:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle.active span:nth-child(3) {
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 700px) {
+    .menuQualities {
+        height: auto;
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: rgb(105, 175, 105);
+        margin: 0;
+        top: 75px;
+        left: 0;
+        width: 100vw;
+        text-align: center;
+        padding: 20px;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        gap: 10px;
+    }
+    .toggle {
+        display: flex;
+    }
+    .menuQualities.active {
+        display: flex;
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.mainText {
+    height: auto;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    border-radius: 20px;
+    border: 3px solid green;
+}
+
+.mainText h1 {
+    color: green;
+    font-size: 24px;
+}
+
+.innovative,
+.creativity,
+.pythonprogrammer,
+.webdeveloper {
+    height: auto;
+    min-height: 400px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    cursor: default
+}
+
+.innovative,
+.pythonprogrammer {
+    flex-wrap: wrap-reverse;
+}
+
+.innovativeimage,
+.creativityimage,
+.pythonimage,
+.webimage {
+    height: auto;
+    max-height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid green;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.innovativeimage img,
+.creativity img,
+.pythonimage img,
+.webimage img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.innovativeexplain,
+.creativityexplain,
+.pythonexplain,
+.webexplain {
+    height: auto;
+    min-height: 200px;
+    width: 500px;
+    padding: 5px;
+    margin: 10px;
+    /* border: 3px solid green;
+    box-shadow: 0 0 10px 5px green; */
+    transition: all 0.5s ease;
+}
+
+.innovativeimage:hover,
+.creativityimage:hover,
+.pythonimage:hover,
+.webimage:hover {
+    transform: scale(1.05);
+}
+
+.innovative h2,
+.creativity h2,
+.pythonprogrammer h2,
+.webexplain h2 {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    font-family: "Teko", sans-serif;
+}
+
+.innovative p,
+.creativity p,
+.pythonprogrammer p,
+.webexplain p {
+    padding: 5px;
+    margin: 5px;
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+@media (max-width: 442px) {
+    .mainText h1 {
+        font-size: 18px;
+    }
+}
+footer {
+  height: auto;
+  min-height: 20vh;
+  width: 100%;
+  background-color: green;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  cursor: default;
+}
+
+.foot1 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+} 
+
+.foot2 p {
+  color: white;
+  cursor: default;
+}
+
+.foot1 div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 10px;
+}
+
+.foot1 div a {
+  margin: 5px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.foot1 i {
+  transition: color 0.5s ease;
+}
+
+.foot1 div a:hover, i:hover {
+  color: black;
+}

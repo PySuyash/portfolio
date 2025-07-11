@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: auto;
+    min-height: 70px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: green;
+    flex-wrap: wrap;
+}
+
+.menuProject {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: animateProject 0.3s ease;
+}
+
+@keyframes animateProject {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.menuProject li {
+    list-style: none;
+}
+
+.ham {
+    position: relative;
+    height: 30px;
+    width: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.ham span {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.ham.active span:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.ham.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham.active span:nth-child(3) {
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.nav1 {
+    height: 80%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    gap: 10px;
+    overflow: hidden;
+    color: white;
+    font-size: 18px;
+    cursor: default;
+    font-family: "Cinzel Decorative", serif;
+    border: 2px solid white;
+    box-shadow: 0 0 10px 5px white;
+    border-radius: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: green;
+}
+
+main {
+    animation: projectAnimate 0.7s ease forwards;
+}
+
+@keyframes projectAnimate {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 666px) {
+    .menuProject {
+        display: none;
+    }
+    .ham {
+        display: flex;
+    }
+    .menuProject {
+        height: auto;
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: rgb(105, 175, 105);
+        margin: 0;
+        top: 100px;
+        left: 0;
+        width: 100vw;
+        text-align: center;
+        padding: 20px;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        gap: 50px;
+    }
+    .menuProject.active {
+        display: flex;
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+#projectMainHeading {
+    text-align: center;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.secondProject,
+.firstProject {
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
+    padding: 10px;
+    margin: 10px 0 0 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: linear-gradient(rgb(204, 239, 204), white);
+}
+
+.secondProject {
+    flex-wrap: wrap-reverse;
+}
+
+.project2img,
+.project1img {
+    height: auto;
+    min-height: 80%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 3px solid green;
+}
+
+.project2img img,
+.project1img img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.project2info,
+.project1info {
+    height: auto;
+    min-height: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid green;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px green;
+    transition: all 0.3s ease;
+}
+
+.project2img:hover,
+.project2info:hover,
+.project1img:hover,
+.project1info:hover {
+    transform: scale(1.02);
+}
+
+.project2info h2,
+.project1info h2 {
+    text-align: center;
+    padding: 10px;
+    font-family: "Teko", sans-serif;
+    color: green;
+}
+
+.project2info p,
+.project1info p {
+    text-align: justify;
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.project1info a,
+.project2info a {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+}
+
+footer {
+  height: auto;
+  min-height: 20vh;
+  width: 100%;
+  background-color: green;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  cursor: default;
+}
+
+.foot1 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+} 
+
+.foot2 p {
+  color: white;
+  cursor: default;
+}
+
+.foot1 div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 10px;
+}
+
+.foot1 div a {
+  margin: 5px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.foot1 i {
+  transition: color 0.5s ease;
+}
+
+.foot1 div a:hover, i:hover {
+  color: black;
+}
